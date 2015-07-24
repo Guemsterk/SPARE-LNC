@@ -1,0 +1,170 @@
+
+body {
+padding:20px; background-color:#BBB;
+ border-radius:4px;
+
+}
+ul { 
+list-style-type: none; margin: 0; padding: 0; 
+margin-bottom: 10px; 
+border-radius:6px;
+}
+li {
+ margin: 2px;
+ padding: 2px;
+ width: 200px;
+ float : left;
+ background-color:#C9C9C9;
+ border-radius:2px;
+ }
+
+
+.main-div { 
+ width : 75%; 
+ padding : 40px; 
+ height : 1200px; 
+ background-color:#FaFaFb; box-shadow: 3px 4px 2px rgba(0,0,0,0.15);
+ margin-left: auto;
+ margin-right: auto;
+ border-radius:8px;
+ margin-bottom: 10px; 
+ }
+ 
+.resultats { 
+ width : 75%; 
+ padding : 40px; 
+ height : 300px; 
+ background-color:#FaFaFb; box-shadow: 3px 4px 2px rgba(0,0,0,0.15);
+ margin-left: auto;
+ margin-right: auto;
+ border-radius:8px;
+ margin-bottom: 10px; 
+ }
+  
+.informations { 
+ width : 75%; 
+ padding : 40px; 
+ height : 150px; 
+ background-color:#FaFaFb; box-shadow: 3px 4px 2px rgba(0,0,0,0.15);
+ margin-left: auto;
+ margin-right: auto;
+ border-radius:8px;
+ margin-bottom: 10px; 
+ }
+
+.etapes { 
+ width : 75%; 
+ padding : 40px; 
+ height : 600px; 
+ background-color:#FaFaFb; box-shadow: 3px 4px 2px rgba(0,0,0,0.15);
+ margin-left: auto;
+ margin-right: auto;
+ border-radius:8px;
+ margin-bottom: 10px; 
+ }
+ 
+ .etapes2 { 
+ width : 75%; 
+ padding : 40px; 
+ height : 600px; 
+ background-color:#FaFaFb; box-shadow: 3px 4px 2px rgba(0,0,0,0.15);
+ margin-left: auto;
+ margin-right: auto;
+ border-radius:8px;
+ margin-bottom: 10px; 
+ }
+ 
+ 
+.testliste { width : 85%; padding : 40px; height : 250px; background-color:#E3E3E3; box-shadow: -1px 2px 8px 3px rgba(0, 0, 0, 0.3) inset;
+ border-radius:4px;
+ margin-left: auto;
+ margin-right: auto;
+ overflow : auto;}
+
+ .scrollable-element
+ {
+	height:400px;
+	overflow:auto;
+ }
+ 
+.otherinnerlist { 
+ border-radius:1px;
+ width : 95%; height : 75px; 
+ background-color:#F2F1F1; 
+ box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset; 
+ margin-left: 0px;
+ margin-right: auto;
+ }
+
+.mots {
+ margin: 1px;
+ padding: 1px;
+ width: auto;
+ float : left;
+ background-color:#C9C9C9;
+ border-radius:2px;
+ }
+ 
+ /*
+.jecherche {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+}
+
+.processquery {
+    position: fixed;
+    top: 4em;
+    left: 1em;
+} */
+
+/* La liste des attributs */
+.attribut {
+/*
+ border-radius:1px;
+ width : 95%; height : 200px; 
+ background-color:#F2F1F1; 
+ box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset; 
+ margin-left: 0px;
+ margin-right: auto;
+ */
+ }
+ 
+/* La liste qui affiche les éléments par attribut */
+.valeurs {
+/*
+ border-radius:1px;
+ width : 95%; height : 200px; 
+ background-color:#F2F1F1; 
+ box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset; 
+ margin-left: 0px;
+ margin-right: auto;
+*/
+ }
+ 
+ 
+ /* Les listes d'éléments pour ajouter en tant qu'attribut et valeur d'attribut */
+ 
+#feedback { font-size: 1.4em; }
+
+#attribut .ui-selecting { background: #FECA40;  }
+
+#attribut .ui-selected { background: #F39814; color: white; }
+
+#attribut { list-style-type: none; margin-right: 15px; padding: 0; width: 600px; float:left  }
+
+#attribut li { margin: 3px; padding: 0.4em; font-size: 1em; width: 600px; }
+
+
+#valeurs .ui-selecting { background: #FECA40; }
+
+#valeurs .ui-selected { background: #F39814; color: white; }
+
+#valeurs { list-style-type: none; margin: 5px; width: 200px; float:left }
+
+#valeurs li { margin: 3px; padding: 0.4em; font-size: 1em;  width: 500px; }
+
+
+ul.queryliste { height : 200px;  float: left;  background-color:#b0c4de;}
+
+#maj_elements_conseil2{ float:bottom;}
