@@ -1,0 +1,265 @@
+
+<!-- Proposition de boutons et d'une liste sortable qui se remplie. -->
+
+<!-- 
+! IMPORTANT : 
+Dans le parser, la lsite des préfixes est à définir.
+Comme dit par M. Mille, on peut se positionner plus haut et récupérer le modèle à ce niveau.
+ ! -->
+
+<!-- 
+
+	Ecrire ne fait pas forcément avancer ou vérifier les choses... :/
+	L'ensemble n'est pas inconsistant, mais n'est pas le meilleurs choix x/
+	
+	Pour le moment, faire une liste dont les éléments ne sont pas droppable mais dont on peut supprimer le dernier.
+	
+	Cela implique trois choses :
+		-> Mettre les éléments ajoutés en non droppable.
+		-> Mettre le dernier en suppression possible par clic
+		-> Détecter et bloquer les éléments ajoutable par condition de curseur.
+		
+		Le Curseur est pour le moment ajouté à la fin uniquement. Il devrait être plus ou moins amovibles par la suite, et la suppression devrais être faite soit à la main, saoit avec un outil gomme.
+		
+http://stackoverflow.com/questions/5932837/how-do-i-change-the-style-of-the-cursor-with-jquery
+
+
+/*
+		- Faire la fonction qui utilise Samotrace	==> Voir la versiond e génération de modèle .
+		- Faire la fonction qui désactive les éléments.
+		
+			
+*/
+
+
+ -->
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="css/samotraces.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<title>Test Interface JQuery</title>
+	
+	<script type="text/javascript" src="ySRiUkLF.js"></script>
+	<link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+	
+
+	
+	<!-- Les Parsers -->
+	<script type="text/javascript" src="js/ftmXhyxZ.js"></script>
+	<!--<script type="text/javascript" src="parserCLN-5-05-2014.js"></script>-->
+	<!--<script type="text/javascript" src="parser/parserCLN 22-05-2014 12h26h.js"></script>-->
+	<!--<script type="text/javascript" src="parser/parserCLN 2-06-2014 1h5.js"></script>-->
+	<!--<script type="text/javascript" src="parser/parserCLN 2-06-2014 2h30.js"></script>-->
+	<!--<script type="text/javascript" src="parser/parserCLN 2-06-2014 9h36.js"></script>-->
+	<!--<script type="text/javascript" src="parser/parserCLN 2-06-2014 10h10.js"></script>-->
+	<!--<script type="text/javascript" src="parser/parserCLN 2-06-2014 12h26.js"></script>-->
+	<!--<script type="text/javascript" src="parser/parserCLN 2-06-2014 13h42.js"></script> -->
+	<!-- <script type="text/javascript" src="parser/parserCLN 3-06-2014 09h07.js"></script> -->
+	<!-- <script type="text/javascript" src="parser/parserCLN 3-06-2014 09h26.js"></script> -->
+	<!-- <script type="text/javascript" src="parser/parserCLN 17-07-2014 10h22.js"></script> -->
+	<!-- <script type="text/javascript" src="parser/parserCLN 17-07-2014 12h38.js"></script> -->
+	<script type="text/javascript" src="parser/parserLNC_SPARE_13_11_15"></script>
+	<script type="text/javascript" src="parser/parserLoader2.js"></script>
+	<!--<link href="css/classic/main.css" rel="stylesheet"> -->
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+
+    <!-- Link Samotrace.js -->
+	<script type="text/javascript" src="js/d3.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/Samotraces.js"></script>
+
+	
+	<!--  Inclusion de mes fonctions javascript et des parseurs -->
+	<script type="text/javascript" src="js/js-MyUi-Version 10 dev 01.js"></script>
+	
+	<!-- Tests pour la récupération du modèle de la trace via Samotrace -->
+	<script type="text/javascript" src="js/component-model-samotrace.js"></script>
+	
+	<!-- Pour l'utilisation des boutons selon le contexte . Obsolète, à virer.
+	<script type="text/javascript" src="./buttonLogic3.js"></script> -->
+	
+	<link rel="stylesheet" href="/css/ui-lightness/jquery-ui-1.10.4.custom.css">
+	
+
+	
+	<link href="css/MyCustom.css" rel="stylesheet">
+
+</head>
+	<body>
+	
+		
+<!--
+
+-->
+<div class="main-div">
+	<!-- Liste de requête du Langage -->
+	<ul class="testliste">
+	</ul>
+	
+	<!-- Boutons pour ajouter des éléments dans la liste ci dessus -->
+	
+	<div class="debut_word">
+	<button class="jecherche" > Je cherche à</button>
+	<button class="soit"> Soit </button>
+	<button class="jenomme"> Je nomme </button>
+	<button class="parmi"> Parmi </button>
+	<button class="je_garde"> je garde seulement </button>
+	<button class="grammar_concerned" id="parmi_jecherche">, je cherche à</button>
+	
+	</div>
+	
+	<div class="action_word">
+	<button class="grammar_concerned" id="getWord" >récupérer</button>
+	<button class="grammar_concerned" id="countWord">compter le nombre d'</button>
+	<button class="grammar_concerned" id="countWord_short">le nombre d'</button>
+	
+	</div>
+	
+	<div class="get_type">
+	<button class="grammar_concerned" id="obselWord">obsels</button>
+	<button class="grammar_concerned" id="lesobselWord">les obsels</button>
+	<button class="grammar_concerned" id="unobselWord">un obsel</button>
+	<!-- <button class="grammar_concerned" id="attributesWord">les attributs</button> -->
+	<button class="grammar_concerned" id="attributeWord">l'attribut</button>
+	<button class="grammar_concerned" id="attributeCountWord"> attributs </button>
+	<button class="grammar_concerned" id="lesattributsWord"> les attributs </button>
+	</div>
+	
+	<div class="conditions">
+	<button class="grammar_concerned" id="possessAttributeCondWord">ayant un attribut</button>
+	<button class="grammar_concerned" id="possessAttributValueWord">de valeur</button>
+	<button class="grammar_concerned" id="possessAttributValueWordSup">de valeur supérieure à</button>
+	<button class="grammar_concerned" id="possessAttributValueWordSupEga">de valeur supérieure ou égale à</button>
+	<button class="grammar_concerned" id="possessAttributValueWordInf">de valeur inférieure à</button>
+	<button class="grammar_concerned" id="possessAttributValueWordInfEga">de valeur inférieure ou égale à</button>
+	<button class="grammar_concerned" id="typeCond"> de type </button>
+
+	<button class="grammar_concerned" id="NonpossessAttributeCondWord">n'ayant pas un attribut</button>
+	</div>
+	<div class="liaisons">
+	<button class="grammar_concerned" id="pointWorld"> . </button>
+	<button class="grammar_concerned" id="virguleWord"> , </button>
+	<!--<button class="grammar_concerned" id="etWord"> et </button> -->
+	<button class="grammar_concerned" id="luimeme">lui même</button>
+	
+	</div>
+
+	<div class="allen">
+	<button class="grammar_concerned" id="suivipar">suivi par</button>	
+	<button class="grammar_concerned" id="directementsuivipar">directement suivi par</button>
+	<button class="grammar_concerned" id="précédépar">précédé par</button>
+	<button class="grammar_concerned" id="directementprécédépar">directement précédé par</button>
+	</div>
+	
+	<div class="dynamic_value">
+	<textarea  id="add_value"></textarea>
+	<button class="grammar_concerned" id="add_button">add</button>
+	</div>
+	<div>
+		<button class="toujours_actif" id="supprimer">supprimer</button>
+	</div>
+	
+	<div>
+	<button class="maj_button_provisoire" id="maj_elements_conseil2"> Récupérer les attributs. </button>
+	</div>
+	
+	<div class="scrollable-element">
+	<ol id="attribut"> 
+	</ol>
+	
+	<!--  Il sera bien de mettre ceci dans un div panel scrollable aussi -->
+
+	<ul id="valeurs">
+	</ul>
+	</div>
+	
+	<p class="pending_r"> Plus de requête en attente </p>
+	
+
+	
+</div>
+
+<div class="informations">
+		 <label>Trace: </label> <input id='base_uri' rows="1" cols="75" value="http://dsi-liris-silex.univ-lyon1.fr/m2ia/ktbs/ambre/traceAlexis/@obsels"> 
+		 <label>Modèle: </label> <textarea id='trace_modele' rows="1" cols="75" > <http://ktbs.univ-lyon1.fr/cdemo2405/modelFOVEAMOOC1#>  </textarea>
+		<button class="processquery" > Envoyer requête sélectionnées </button>
+		<button class="processquery_list" > Envoyer la suite de requête </button>
+
+</div>
+
+	
+<div class="etapes">
+ <ul>
+<li><a href="#tabs-0">Sparql-Fuseki</a></li>
+<li><a href="#tabs-1">JSON</a></li>
+<li><a href="#tabs-2">SPARQL</a></li>
+<li><a href="#tabs-3">Langage de Requête</a></li>
+<li><a href="#tabs-4">Langage Intermediaire</a></li>
+</ul>
+
+	<div id="tabs-0">
+	<textarea id="by_sparql" rows="20" cols="130" > Résultat texte affiché ici </textarea>
+	</div>
+	
+	<div id="tabs-1">
+	<textarea id="resultJSON" rows="20" cols="130" > Résultat JSON affiché ici</textarea>
+	</div>
+	 
+	<div id="tabs-2">
+	<textarea id="resultSPARQL" rows="20" cols="130" > Résultat SPARQL affiché ici</textarea>
+	</div>
+	
+	<div id="tabs-4">
+	<textarea id="resultSPARQLIntermediaire" rows="20" cols="130" onKeyUp=synchro(this.value) onChange=synchro(this.value) > Résultat SPARQL (avec opérateur de Allen non Convertis) affiché ici</textarea>
+	</div>
+	
+	<div id="tabs-3">
+	<textarea id="resultLangage" rows="20" cols="130" onKeyUp=synchroCLN(this.value) onChange=synchroCLN(this.value) > Résultat Langage affiché ici </textarea>
+	</div>
+	
+
+<button id="refresh"> lancer la requête </button> 	
+<p class="pending_r"> Plus de requête en attente </p>
+	
+</div>
+
+	<!-- Il faudrait un truc pour visualiser les obsel...  - ->
+	<button id="json_to_obsel"> Visualize obsel </button>
+</div>-->
+
+<div id="list_element" class="etapes2">
+	<button class="toujours_actif" id="maj_elements_conseil"> Mise à jour des listes </button>
+	<p>Simple affichage dans un champ texte du contenu des attributs</p>
+	<p> Liste des valeurs d'attributs de la trace </p>
+	<textarea id="value_attributes_trace" ></textarea>
+	<p> Liste des noms des attributs</p>
+	<textarea id="name_attributes_trace" ></textarea>
+	</br>
+	<p class="pending_r"> Plus de requête en attente </p>
+
+	
+</div>
+
+<div class="resultats">
+	
+	<textarea id="my_indic_title" ></textarea>
+	<textarea id="my_indic_desc"></textarea>
+	<button id="my_save"> Sauver </button>
+	
+	</br>
+	<textarea id="file_load"> Requête en Langage Contrôlé </textarea>
+	<button id="my_load"> Charger </button>
+	
+	<div id="my-widget"></div>
+	
+
+
+	</div>
+
+
+
+	</body>
+</html>
