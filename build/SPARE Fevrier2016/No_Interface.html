@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<title>Interface textuelle</title>
+	
+	<!--
+		Pour le moment, on fait deux zones de textes, une qui est l'entrée, l'autre la sortie.
+			<p> Une interface complètement textuelle qui ne renvoient même pas les erreurs de parsing (qui sont pourtant là), mais qui permet d'utiliser le parser actuel du langage..</p>
+	<p> L'implémentation On-line du générateur de parser est à l'adresse http://pegjs.majda.cz/online est la grammaire utilisée est dans le fichier "code_pour_pegjs.txt". </p>
+	
+		Utilisation de PEG pour le parseur (je crois) et de Samotrace pour quelques outils utiles sur les traces.
+	--> 
+	<script type="text/javascript" src="ftmXhyxZ.js"></script>
+	<!--<script type="text/javascript" src="parserCLN-18-04-2014-10h.js"></script> -->
+	<!--<script type="text/javascript" src="parser/parserCLN 17-07-2014 10h22.js"></script>-->
+	<!-- <script type="text/javascript" src="parser/parserLNC_SPARE_13_11_15"></script> -->
+	<script type="text/javascript" src="parser.js"></script>
+	
+	<script type="text/javascript" >	
+			/*var parser = require('cwPg5mCP.js');*/
+			function synchro( text ) { document.getElementById("sortie").value = parser.parse(text) }
+			/*  */
+			function synchroCLN( text ) { document.getElementById("sub").value = parserCLN.parse(text); document.getElementById("sortie").value = parser.parse(document.getElementById("sub").value);  }
+	</script>
+	
+</head>
+
+<body>
+
+	Exemples :
+	<ul> 
+		<li>Je cherche à récupérer les obsels de type SimpleObsel et ayant un attribut de valeur 'Erik' suivi par un obsel ayant un attribut de valeur "someone else".</li>
+		<li>Je veux récupérer les obsels précédé par un obsel ayant un attribut de valeur "someone else".</li>
+		<li>Je veux compter le nombre d'obsels .</li>
+		<li>Je cherche à compter le nombre d'obsels de type SimpleObsel.</li>
+		<li>Je veux compter le nombre d'obsels ayant un attribut id.</li>
+		<li>Soit Resulat = A ;</li>
+		<li>Je veux compter le nombre d'obsels ayant un attribut de valeur Erik.</li>
+	</ul>
+
+	<textarea id="nom" rows="20" cols="80" onKeyUp=synchroCLN(this.value) onChange=synchroCLN(this.value)>
+			Ecrire la requête ici
+	</textarea>	
+	
+	<textarea id="sub" rows="20" cols="80" onKeyUp=synchro(this.value) onChange=synchro(this.value)>
+			Sous résultat de parsing 
+	</textarea>	
+	</br>
+	<textarea id="sortie" rows="20" cols="80">
+			Le résultat est montré ici
+	</textarea>
+</body>
+
+</html>
